@@ -43,7 +43,7 @@ class iQiyiLogin():
 
     def login(self, encrypyPwd):
         """
-        登录
+        登录, 未破解验证码加密, 极验滑动验证还是用自动化工具去破比较好... 那个env_token就是验证码验证后的参数, 第一次访问不带这个参数, 响应中会返回一个token, 然后这个token需要经过验证后才有效
         :return:
         """
         url = 'https://passport.iqiyi.com/apis/reglogin/login.action'
@@ -61,7 +61,7 @@ class iQiyiLogin():
             'nr': '1',
             'verifyPhone': '1',
             'area_code': '86',
-            'env_token': 'c225a3e03fdf4c90a9227af2f0abd8bb',
+            'env_token': 'c225a3e03fdf4c90a9227af2f0abd8bb',  # 验证码加密参数
             'dfp': 'a06e54c2dfe5d24ebf8aec1c2d0a8f5afb2fc70fd2a147f7ab9e5aea7cff440f9e',
             'envinfo': 'eyJqbiI6Ik1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdPVzY0OyBydjo2Ny4wKSBHZWNrby8yMDEwMDEwMSBGaXJlZm94LzY3LjAiLCJjbSI6InpoLUNOIiwiZ3UiOjI0LCJ1ZiI6MSwianIiOlsxMzY2LDc2OF0sImRpIjpbMTM2Niw3MjhdLCJ6cCI6LTQ4MCwidWgiOjEsInNoIjoxLCJoZSI6MSwicnYiOiJ1bmtub3duIiwibngiOiJXaW4zMiIsIml3IjoidW5zcGVjaWZpZWQiLCJxbSI6W10sIndyIjoiOWUzYjk5MzFhNzBiMGQwZDI0NGU1ZTg1MTAyZGJiYTAiLCJ3ZyI6IjRlMzVhYWVjZTM2NTU0YTM5MGQwYWU1MDNlZDljOTM0IiwiZmsiOmZhbHNlLCJyZyI6ZmFsc2UsInh5IjpmYWxzZSwiam0iOmZhbHNlLCJiYSI6ZmFsc2UsInRtIjpbMCxmYWxzZSxmYWxzZV0sImF1Ijp0cnVlLCJtaSI6IjQ1MjY1MDUxLWM3MjItNTcyOC00OGY3LWJiMjA3N2NlMGVhMCIsImNsIjoiUENXRUIiLCJzdiI6IjEuMCIsImpnIjoiNTE3YzNiNDk0NzFlMTJiZTc0N2QzYWI3MWY1YTM1OTMiLCJmaCI6ImhydWtvdjY0OW15OGV1YnB4Ym9uMThuayIsImlmbSI6W3RydWUsNDYwLDQyMCwiaHR0cDovL3d3dy5pcWl5aS5jb20vIl0sImV4IjoiIiwicHYiOmZhbHNlfQ=='
         }
@@ -71,7 +71,6 @@ class iQiyiLogin():
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             'Origin': 'http://www.iqiyi.com',
             'Referer': 'http://www.iqiyi.com/iframe/loginreg?ver=1',
-            # 'Cookie': 'QC005=517c3b49471e12be747d3ab71f5a3593; QC173=0; QC175=%7B%22upd%22%3Atrue%2C%22ct%22%3A%22%22%7D; QC176=%7B%22state%22%3A0%2C%22ct%22%3A1560493270349%7D; QC006=hrukov649my8eubpxbon18nk; QC008=1560493275.1560524793.1560526194.3; QC001=1; Hm_lvt_53b7374a63c37483e5dd97d78d9bb36e=1560493276,1560524791,1560526193; T00404=9f51f9475ecce43dcab2f7671441adbb; IMS=IggQABj_iI_oBSokCiAwNWY1NGNmZjE5NTkxNjVlZjQ4NDgzMDBiMDFlYzIyNRAA; P00004=.1560493279.b2901e3310; QC160=%7B%22u%22%3A%2218829040039%22%2C%22lang%22%3A%22%22%2C%22local%22%3A%7B%22name%22%3A%22%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86%22%2C%22init%22%3A%22Z%22%2C%22rcode%22%3A48%2C%22acode%22%3A%2286%22%7D%2C%22type%22%3A%22p1%22%7D; Hm_lpvt_53b7374a63c37483e5dd97d78d9bb36e=1560526193; QC007=http%253A%252F%252Fwww.so.com%252Flink%253Fm%253Da7qrUu9w4zbwjTqX%25252BasX5Z7vy%25252FxHyVEAlhQdUe9nmiXNZ9KvZC8iPeMmxooWin7pPzIEG3hBHops5br0qbXdAFMbb09t9b111jRLvQzTz2xQ%25253D; QC010=119642892; nu=0; __dfp=a06e54c2dfe5d24ebf8aec1c2d0a8f5afb2fc70fd2a147f7ab9e5aea7cff440f9e@1561789277099@1560493277099',
             'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Mobile Safari/537.3'
         }
 
